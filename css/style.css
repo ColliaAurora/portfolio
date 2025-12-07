@@ -1,6 +1,10 @@
 body {
   margin: 0;
   background-color: rgba(40, 40, 40);
+  color: white;
+  font-family: "aktiv-grotesk", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 img {
@@ -72,4 +76,21 @@ video {
   height: 100%;
   width: 100vw;
   z-index: 999;
+}
+
+.swiper .swiper-pagination {
+  text-align: left;
+  --swiper-pagination-bottom: 0;
+  --swiper-pagination-fraction-color: white;
+  padding: 10px 0 20px 20px;
+  background-color: rgba(40, 40, 40);
+}
+
+.name {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  color: white;
+  z-index: 100;
 }

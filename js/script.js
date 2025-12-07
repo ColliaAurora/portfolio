@@ -10,17 +10,19 @@ const swiper = new Swiper(".swiper", {
   },
   speed: 15,
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
+  hashNavigation: {
+    watchState: true,
+  },
+
+  keyboard: {
+    enabled: true,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
   },
 });
-
-// Moritz sein Code
-// const swiperWrapper = document.querySelector(".swiper-wrapper");
-// swiperWrapper.addEventListener("click", () => {
-//   swiper.slideNext();
-// });
 
 //Geminis Code
 const swiperWrapper = document.querySelector(".swiper-wrapper");
@@ -41,4 +43,7 @@ swiperWrapper.addEventListener("click", (event) => {
     // Klick ist in der rechten Hälfte -> WEITER
     swiper.slideNext();
   }
+
+  const name = document.querySelector(".name");
+  name.addEventListener("click", () => {});
 });

@@ -15,6 +15,8 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.typekit.net/amq4tsl.css" />
   </head>
 
   <body>
@@ -25,6 +27,10 @@
         <!-- Slides -->
 
         <!-- Pro Slide ein <div> mit class swiper-slide -->
+        <div class="swiper-slide">
+          <img src="images/Ich-2.jpg" />
+        </div>
+
         <div class="swiper-slide">
           <img src="images/Wand_Home_provi.jpg" />
         </div>
@@ -316,11 +322,8 @@
           <img src="images/ParisVogel-25.jpg" />
         </div>
 
-        <div class="swiper-slide">
-          <img src="images/Ich-2.jpg" />
-        </div>
-
-        <div class="swiper-slide">
+        <!-- Der data-hash macht die Folie verlinkbar -->
+        <div class="swiper-slide" data-hash="ueber">
           <img src="images/Ich-3.jpg" />
         </div>
 
@@ -341,9 +344,11 @@
           </div>
         </div> -->
       </div>
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
     </div>
+    <!-- Der Hashtag verlinkt auf die zugehörige Folie -->
+    <a class="name" href="#ueber">Aurora Collia</a>
   </body>
 
   <script src="js/script.js"></script>
