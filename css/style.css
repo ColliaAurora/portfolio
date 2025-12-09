@@ -1,9 +1,14 @@
 body {
   margin: 0;
+
   background-color: rgba(40, 40, 40);
+
   color: white;
+
   font-family: "aktiv-grotesk", sans-serif;
+
   font-weight: 400;
+
   font-style: normal;
 }
 
@@ -13,16 +18,23 @@ img {
 
 video {
   width: 100%;
+
   height: 100vh;
-  margin-top: 20px;
-  margin-bottom: 20px;
+
+  /* margin-top: 20px;
+
+  margin-bottom: 20px; */
 }
 
 /*
-.scrollbar {
-  width: 50px;
-}
-  */
+    
+    .scrollbar {
+    
+    width: 50px;
+    
+    }
+    
+    */
 
 .swiper-slide {
   position: relative;
@@ -30,69 +42,112 @@ video {
 
 .text {
   /* Das Berühren der Figüren mit den Pfoten ist verboten */
+
   position: absolute;
+
   width: 100%;
+
   left: 0;
+
   top: 0;
+
   z-index: 1;
 
   /* vw bezieht sich auf die Browserbreite (vw = viewport width) */
+
   /* padding steuert den Abstand zum Rand: oben rechts unten links (NOSW – nie ohne Seife waschen) */
+
   padding: 3vw 8vw 3vw 3vw;
+
   /* Die Schriftgrösse */
+
   font-size: 3vw;
+
   /* Laufweise */
+
   /* letter-spacing: 0.05em; */
+
   color: rgb(0, 0, 0);
+
   font-size: xx-large;
+
   border-block-end: 0px;
+
   text-align: justify;
+
   text-align: left;
 }
 
 .hintergrundbild {
   position: absolute;
+
   width: 100%;
+
   height: 100%;
+
   z-index: -1;
+
   object-fit: cover;
 }
 
 .swiper-scrollbar {
   top: 0 !important;
+
   --swiper-scrollbar-size: 15px;
+
   --swiper-scrollbar-bg-color: rgba(34, 34, 34, 0.5);
+
   --swiper-scrollbar-drag-bg-color: rgba(0, 0, 0, 0.5);
+
   --swiper-scrollbar-sides-offset: 0px;
+
   --swiper-scrollbar-border-radius: 0;
 }
 
 .swiper-scrollbar-drag:before {
   content: "";
+
   background-color: var(--swiper-scrollbar-drag-bg-color);
+
   position: relative;
+
   left: -99vw;
+
   top: 0;
+
   position: absolute;
+
   bottom: 0;
+
   height: 100%;
+
   width: 100vw;
+
   z-index: 999;
 }
 
 .swiper .swiper-pagination {
   text-align: left;
+
   --swiper-pagination-bottom: 0;
+
   --swiper-pagination-fraction-color: white;
+
   padding: 10px 0 20px 20px;
+
   background-color: rgba(40, 40, 40);
 }
 
 .name {
   position: fixed;
+
   bottom: 20px;
+
   right: 20px;
+
   text-decoration: none;
+
   color: white;
+
   z-index: 100;
 }
