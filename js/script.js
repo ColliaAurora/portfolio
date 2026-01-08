@@ -2,13 +2,14 @@ const swiper = new Swiper(".swiper", {
   // Optional parameters
   loop: true,
   mousewheel: true,
+
   //   Wenn die Zeile effect gelöscht/auskommentiert ist, werden die Slides horizontal bewegt
   //   Mit der Zeile werden sie überblendet
-  effect: "fade",
-  fadeEffect: {
-    crossFade: true,
-  },
-  speed: 15,
+  //   effect: "fade",
+  //   fadeEffect: {
+  //     crossFade: true,
+  //   },
+  speed: 1,
 
   hashNavigation: {
     watchState: true,
