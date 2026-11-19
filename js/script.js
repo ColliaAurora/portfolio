@@ -1,7 +1,7 @@
 const swiper = new Swiper(".swiper", {
   // Optional parameters
   loop: true,
-  mousewheel: true,
+  //   mousewheel: true,
 
   //   Wenn die Zeile effect gelöscht/auskommentiert ist, werden die Slides horizontal bewegt
   //   Mit der Zeile werden sie überblendet
@@ -10,10 +10,6 @@ const swiper = new Swiper(".swiper", {
   //     crossFade: true,
   //   },
   speed: 1,
-
-  hashNavigation: {
-    watchState: true,
-  },
 
   keyboard: {
     enabled: true,
@@ -25,26 +21,39 @@ const swiper = new Swiper(".swiper", {
   },
 });
 
-//Geminis Code
 const swiperWrapper = document.querySelector(".swiper-wrapper");
+const name = document.querySelector(".name");
+let previousSlide = null;
 
-// ERSETZE den alten Event-Listener komplett mit diesem neuen Code
 swiperWrapper.addEventListener("click", (event) => {
-  // 1. Die Gesamtbreite des Swiper-Containers abrufen
-  const containerWidth = swiperWrapper.offsetWidth;
+  // Klicks auf Bedienelemente innerhalb des Wrappers sollen nicht navigieren.
+  if (event.target.closest("a, button")) return;
 
-  // 2. Die X-Koordinate des Klicks relativ zum Container abrufen
+  const containerWidth = swiperWrapper.offsetWidth;
   const clickX = event.clientX - swiperWrapper.getBoundingClientRect().left;
 
-  // 3. Prüfen, ob der Klick in der linken oder rechten Hälfte war
   if (clickX < containerWidth / 2) {
-    // Klick ist in der linken Hälfte -> ZURÜCK
     swiper.slidePrev();
   } else {
-    // Klick ist in der rechten Hälfte -> WEITER
     swiper.slideNext();
   }
+});
 
-  const name = document.querySelector(".name");
-  name.addEventListener("click", () => {});
+name.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  if (previousSlide === null) {
+    previousSlide = swiper.realIndex;
+    swiper.el.classList.add("about-open");
+    name.classList.add("is-about-open");
+    const aboutSlide = swiper.slides.find((slide) => slide.dataset.hash === "ueber");
+    swiper.slideToLoop(Number(aboutSlide.dataset.swiperSlideIndex));
+    return;
+  }
+
+  const slideToRestore = previousSlide;
+  previousSlide = null;
+  swiper.el.classList.remove("about-open");
+  name.classList.remove("is-about-open");
+  swiper.slideToLoop(slideToRestore);
 });

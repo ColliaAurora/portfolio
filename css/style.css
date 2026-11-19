@@ -35,6 +35,10 @@ video {
   padding-top: 20px;
 }
 
+.swiper.about-open .swiper-pagination {
+  display: none;
+}
+
 .text {
   /* Das Berühren der Figüren mit den Pfoten ist verboten */
 
@@ -141,4 +145,18 @@ video {
   color: white;
 
   z-index: 100;
+}
+
+.name-close {
+  display: none;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.name.is-about-open .name-label {
+  display: none;
+}
+
+.name.is-about-open .name-close {
+  display: inline;
 }
